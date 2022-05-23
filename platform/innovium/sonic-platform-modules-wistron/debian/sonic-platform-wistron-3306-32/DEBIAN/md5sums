@@ -1,0 +1,9 @@
+a624e02651485f912e976a5ded5469f8  lib/modules/4.19.0-12-2-amd64/extra/w_eeprom.ko
+545b855414deb5a5d0e59d969a915718  lib/modules/4.19.0-12-2-amd64/extra/wistron_cpld.ko
+e07be55d50024c8e02821ef27ff8f951  lib/modules/4.19.0-12-2-amd64/extra/wistron_fpga.ko
+2e7ec19fee12cb5d518002bdfaacbdf2  lib/modules/4.19.0-12-2-amd64/extra/wistron_platform.ko
+7437ed811110242cbaeb93b9fd383d9e  lib/modules/4.19.0-12-2-amd64/extra/wistron_pmbus_core.ko
+0006bb8101c5f95182d27e0f386680d0  lib/modules/4.19.0-12-2-amd64/extra/wistron_psu.ko
+ce023d33c7847a5060544630533e321d  lib/systemd/system/platform-modules-3306-32.service
+a542787855ff55de38b64f25dc95400e  usr/share/doc/sonic-platform-wistron-3306-32/changelog.gz
+18f70b5ecfaf2c6b0830f0cd0fecc3e3  usr/share/sonic/device/x86_64-wistron_3306_32-r0/sonic_platform-1.0-py3-none-any.whl

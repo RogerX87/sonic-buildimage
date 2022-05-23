@@ -1,0 +1,11 @@
+./6512-32r/utils/platform_sync
+./6512-32r/utils/platform_syseeprom
+./6512-32r/utils/sonic-fanthrml-monitor
+./6512-32r/utils/sonic-led-monitor
+./6512-32r/utils/sonic-psu-monitor
+./6512-32r/utils/sonic-qsfp-monitor
+./6512-32r/utils/wistron_6512_32r_util.py
+./6512-32r/sonic_platform-1.0-py3-none-any.whl
+./6512-32r/service/6512-32r-platform.service
+./6512-32r/service/6512-32r-syseeprom.service
+./6512-32r/service/platform-modules-6512-32r.service

@@ -1,0 +1,17 @@
+Source: sonic-wistron-platform-modules
+Section: main
+Priority: extra
+Maintainer: Wistron <switchsupport@wistron.com>
+Build-Depends: debhelper (>= 8.0.0), bzip2
+Standards-Version: 3.9.3
+
+Package: sonic-platform-wistron-3306-32
+Architecture: amd64
+Depends: linux-image-4.19.0-12-2-amd64-unsigned
+Description: Kernel modules for Wistron platform devices such as eeprom, psu, sfp
+
+Package: sonic-platform-wistron-6512-32r
+Architecture: amd64
+Depends: linux-image-4.19.0-12-2-amd64-unsigned
+Description: Kernel modules for Wistron platform devices such as eeprom, psu, sfp
+

@@ -1,0 +1,4 @@
+sonic-wistron-platform-modules (1.0) unstable; urgency=low
+
+  * Add support for Wistron sunnyvale
+  * Initial release

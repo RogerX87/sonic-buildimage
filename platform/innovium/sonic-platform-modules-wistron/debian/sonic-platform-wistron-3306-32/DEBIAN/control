@@ -1,0 +1,10 @@
+Package: sonic-platform-wistron-3306-32
+Source: sonic-wistron-platform-modules
+Version: 1.0
+Architecture: amd64
+Maintainer: Wistron <switchsupport@wistron.com>
+Installed-Size: 2717
+Depends: linux-image-4.19.0-12-2-amd64-unsigned
+Section: main
+Priority: extra
+Description: Kernel modules for Wistron platform devices such as eeprom, psu, sfp

@@ -1,0 +1,49 @@
+!/debian
+!/debian/*
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+
+# Debug files
+*.dSYM/
+*.su
+
+# Editor backup
+*.bak 
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+*.o.d
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Debian packaging
+*.debhelper.log
+*.postinst.debhelper
+*.postrm.debhelper
+*.prerm.debhelper
+*.substvars

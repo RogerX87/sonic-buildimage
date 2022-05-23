@@ -1,0 +1,2 @@
+3306-32/service/platform-modules-3306-32.service /lib/systemd/system
+3306-32/sonic_platform-1.0-py3-none-any.whl usr/share/sonic/device/x86_64-wistron_3306_32-r0

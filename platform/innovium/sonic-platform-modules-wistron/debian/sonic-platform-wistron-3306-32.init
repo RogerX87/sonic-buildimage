@@ -1,0 +1,141 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:          setup-board
+# Required-Start:    $portmap
+# Required-Stop:
+# Should-Start:
+# Should-Stop:
+# Default-Start:     S
+# Default-Stop:      0 6
+# Short-Description: Setup Wistron sunnyvale board.
+### END INIT INFO
+
+
+case "$1" in
+start)
+        echo -n "Load sunnyvale platform modules ... "
+
+        rmmod i2c_i801
+        rmmod i2c_ismt
+
+        depmod -a
+
+        modprobe i2c_i801
+        modprobe i2c_ismt
+        modprobe i2c_dev
+
+        modprobe optoe
+        modprobe wistron_fpga
+        modprobe wistron_cpld
+        modprobe wistron_pmbus_core
+        modprobe wistron_psu
+        modprobe w_eeprom
+
+#        # Instantiate TLV EEPROM device on I801 bus 
+        devname=`cat /sys/bus/i2c/devices/i2c-1/name`
+        if [[ $devname == 'SMBus iSMT adapter at '* ]]; then
+                echo wistron_fpga 0x41 > /sys/bus/i2c/devices/i2c-1/new_device
+                echo wistron_eeprom 0x55 > /sys/bus/i2c/devices/i2c-1/new_device
+                echo pca9548 0x75 > /sys/bus/i2c/devices/i2c-1/new_device
+        fi
+        sleep 1
+
+        echo tmp75 0x49 > /sys/bus/i2c/devices/i2c-3/new_device
+        echo tmp75 0x4A > /sys/bus/i2c/devices/i2c-3/new_device
+        echo tmp75 0x4B > /sys/bus/i2c/devices/i2c-3/new_device
+        echo tmp75 0x4F > /sys/bus/i2c/devices/i2c-3/new_device
+
+        echo tps53688 0x62 > /sys/bus/i2c/devices/i2c-4/new_device
+        echo tps53688 0x64 > /sys/bus/i2c/devices/i2c-4/new_device
+
+        echo ps2551 0x58 > /sys/bus/i2c/devices/i2c-6/new_device
+        echo ps2551 0x59 > /sys/bus/i2c/devices/i2c-6/new_device
+
+        echo max31790 0x23 > /sys/bus/i2c/devices/i2c-9/new_device
+        echo max31790 0x2C > /sys/bus/i2c/devices/i2c-9/new_device
+        echo lm75 0x49 > /sys/bus/i2c/devices/i2c-9/new_device
+
+        echo pca9548 0x70 > /sys/bus/i2c/devices/i2c-9/new_device
+        echo pca9548 0x71 > /sys/bus/i2c/devices/i2c-9/new_device
+        echo pca9548 0x72 > /sys/bus/i2c/devices/i2c-9/new_device
+        echo pca9548 0x73 > /sys/bus/i2c/devices/i2c-9/new_device
+        echo pca9539 0x76 > /sys/bus/i2c/devices/i2c-9/new_device
+        echo pca9539 0x77 > /sys/bus/i2c/devices/i2c-9/new_device
+
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-10/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-11/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-12/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-13/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-14/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-15/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-16/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-17/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-18/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-19/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-20/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-21/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-22/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-23/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-24/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-25/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-26/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-27/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-28/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-29/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-30/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-31/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-32/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-33/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-34/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-35/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-36/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-37/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-38/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-39/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-40/new_device
+        echo optoe2 0x50 > /sys/bus/i2c/devices/i2c-41/new_device
+
+        echo wistron_cpld 0x53 > /sys/bus/i2c/devices/i2c-10/new_device
+        echo wistron_cpld 0x53 > /sys/bus/i2c/devices/i2c-26/new_device
+
+        pip3 install /usr/share/sonic/device/x86_64-wistron_3306_32-r0/sonic_platform-1.0-py3-none-any.whl
+
+        echo "done."
+        ;;
+
+stop)
+        echo -n "Unload sunnyvale platform modules ... "
+
+        modprobe -r optoe
+        modprobe -r wistron_fpga
+        modprobe -r wistron_cpld
+        modprobe -r wistron_psu
+        modprobe -r wistron_pmbus_core
+        modprobe -r w_eeprom
+
+        devname=`cat /sys/bus/i2c/devices/i2c-1/name`
+        if [[ $devname == 'SMBus iSMT adapter at '* ]]; then
+                echo  0x41 > /sys/bus/i2c/devices/i2c-1/delete_device
+                echo  0x55 > /sys/bus/i2c/devices/i2c-1/delete_device
+                echo  0x75 > /sys/bus/i2c/devices/i2c-1/delete_device
+        fi
+
+        modprobe -r i2c_dev
+        modprobe -r i2c_ismt
+        modprobe -r i2c_i801
+
+        echo "done."
+        ;;
+
+force-reload|restart)
+        echo "Not supported"
+        ;;
+
+*)
+        echo "Usage: /etc/init.d/sonic-platform-wistron-sunnyvale {start|stop}"
+        exit 1
+        ;;
+esac
+
+exit 0
